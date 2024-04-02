@@ -1,0 +1,36 @@
+name: injenerium_mobile_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts: 
+    - family: MontserratBold
+      fonts: 
+        - asset: fonts/Montserrat/MontserratBold.ttf
+    - family: MontserratLight
+      fonts: 
+        - asset: fonts/Montserrat/MontserratLight.ttf
+    - family: MontserratMedium
+      fonts: 
+        - asset: fonts/Montserrat/MontserratMedium.ttf   
+    - family: MontserratRegular
+      fonts: 
+        - asset: fonts/Montserrat/MontserratRegular.ttf  
+    - family: MontserratThin
+      fonts: 
+        - asset: fonts/Montserrat/MontserratThin.ttf
