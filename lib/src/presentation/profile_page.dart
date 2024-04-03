@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:injenerium_mobile_app/src/presentation/galery_page.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/color_style.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/text_stryle.dart';
+import 'package:injenerium_mobile_app/src/presentation/widgets/custom_app_bar.dart';
+import 'package:injenerium_mobile_app/src/presentation/widgets/custom_navigation_bar.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -10,96 +11,217 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
-      body: Stack(
-        children: [
-          Container(
-            decoration: const BoxDecoration(color: Color(0xffD9D9D9)),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 64.0,
-                  height: 64.0,
-                  decoration: BoxDecoration(
-                    color: getBackgroundColor(context),
-                    border: Border.all(color: getPrimaryColor(context)),
-                    borderRadius: BorderRadius.circular(64),
-                  ),
-                ),
-                SizedBox(
-                  width: 21,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      backgroundColor: getSecondaryColor(context),
+      body: const SafeArea(
+        child: Column(
+          children: [
+            CustomAppBar(title: 'Профиль', settings: true),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
-                    Text(
-                      'Имя Фамилия',
-                      style: getBoldTextStyle(context),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: getPrimaryColor(context),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text(
-                          'Группа 28',
-                          style: getLightTextStyle(context),
-                        ),
-                      ),
-                    )
+                    _NameProfileAndAvatar(),
+                    _ProgressBarWithTitle(),
+                    _Galery(),
                   ],
-                )
-              ],
+                ),
+              ),
             ),
-          )
+            CustomNavBar(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Galery extends StatelessWidget {
+  const _Galery();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        children: [
+          Text(
+            'Галерея',
+            style: getBoldTextStyle(context),
+          ),
+          const Spacer(),
+          InkWell(
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const GaleryPage()),
+            ),
+            child: const Icon(Icons.keyboard_arrow_right_outlined),
+          ),
         ],
       ),
     );
   }
 }
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({
-    super.key,
+class _ProgressBarWithTitle extends StatelessWidget {
+  const _ProgressBarWithTitle();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Посещение',
+            style: getBoldTextStyle(context),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const _ProgressBar(name: 'Биотехнологии'),
+          const SizedBox(height: 20.0),
+          const _ProgressBar(name: 'Робототехника'),
+        ],
+      ),
+    );
+  }
+}
+
+class _ProgressBar extends StatelessWidget {
+  final String name;
+  const _ProgressBar({
+    required this.name,
   });
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 40.0,
-          // vertical: 20.0,
-        ),
-        child: Text(
-          'Профиль',
-          style: getTitleTextStyle(context),
+    return Container(
+      height: 150,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: getBackgroundColor(context),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              name,
+              style: getRegularTextStyle(context),
+            ),
+            const SizedBox(
+              height: 21,
+            ),
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  _ProgressButton(),
+                  _ProgressButton(),
+                  _ProgressButton(),
+                  _ProgressButton(),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20.0,
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.settings_outlined,
-            ),
-          ),
-        )
-      ],
-      backgroundColor: getBackgroundColor(context),
     );
   }
+}
+
+class _ProgressButton extends StatelessWidget {
+  const _ProgressButton();
 
   @override
-  Size get preferredSize => AppBar().preferredSize;
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: Container(
+        width: 80,
+        height: 56,
+        decoration: BoxDecoration(
+          color: getSecondaryColor(context),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '12 Фев 2024',
+              style: getThinTextStyle(context, color: Colors.black),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Text(
+              'Н',
+              style: getRegularTextStyle(context),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _NameProfileAndAvatar extends StatelessWidget {
+  const _NameProfileAndAvatar();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 64.0,
+            height: 64.0,
+            decoration: BoxDecoration(
+              color: getBackgroundColor(context),
+              border: Border.all(color: getPrimaryColor(context)),
+              borderRadius: BorderRadius.circular(64),
+            ),
+            child: Icon(
+              Icons.camera_alt_outlined,
+              color: getPrimaryColor(context),
+            ),
+          ),
+          const SizedBox(
+            width: 21,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Имя Фамилия',
+                style: getBoldTextStyle(context),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: getPrimaryColor(context),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    'Группа 28',
+                    style: getLightTextStyle(
+                      context,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
 }

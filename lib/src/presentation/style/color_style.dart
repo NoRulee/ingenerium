@@ -8,3 +8,6 @@ Color getOnBackgroundColor(BuildContext context) => Theme.of(context).colorSchem
 
 /// Get Primary for given context
 Color getPrimaryColor(BuildContext context) => Theme.of(context).colorScheme.primary;
+
+/// Get Primary for given context
+Color getSecondaryColor(BuildContext context) => Theme.of(context).colorScheme.secondary;

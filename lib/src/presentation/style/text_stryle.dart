@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+const Color defaultColor = Colors.black;
+
 /// Get Title Text Style with given [context].
 TextStyle getTitleTextStyle(
-  BuildContext context,
-) {
-  return const TextStyle(
-    color: Colors.black,
+  BuildContext context, {
+  Color? color,
+}) {
+  return TextStyle(
+    color: color ?? defaultColor,
     fontSize: 24.0,
     fontWeight: FontWeight.w700,
     fontFamily: 'MontserratTitle',
@@ -14,10 +17,11 @@ TextStyle getTitleTextStyle(
 
 /// Get Bold Text Style with given [context].
 TextStyle getBoldTextStyle(
-  BuildContext context,
-) {
-  return const TextStyle(
-    color: Colors.black,
+  BuildContext context, {
+  Color? color,
+}) {
+  return TextStyle(
+    color: color ?? defaultColor,
     fontSize: 20.0,
     fontWeight: FontWeight.w500,
     fontFamily: 'MontserratBold',
@@ -26,10 +30,11 @@ TextStyle getBoldTextStyle(
 
 /// Get Regular Text Style with given [context].
 TextStyle getRegularTextStyle(
-  BuildContext context,
-) {
-  return const TextStyle(
-    color: Colors.black,
+  BuildContext context, {
+  Color? color,
+}) {
+  return TextStyle(
+    color: color ?? defaultColor,
     fontSize: 16.0,
     fontWeight: FontWeight.w400,
     fontFamily: 'MontserratRegular',
@@ -38,10 +43,11 @@ TextStyle getRegularTextStyle(
 
 /// Get Light Text Style with given [context].
 TextStyle getLightTextStyle(
-  BuildContext context,
-) {
-  return const TextStyle(
-    color: Colors.white,
+  BuildContext context, {
+  Color? color,
+}) {
+  return TextStyle(
+    color: color ?? defaultColor,
     fontSize: 14.0,
     fontWeight: FontWeight.w300,
     fontFamily: 'MontserratLight',
@@ -50,10 +56,11 @@ TextStyle getLightTextStyle(
 
 /// Get Thin Text Style with given [context].
 TextStyle getThinTextStyle(
-  BuildContext context,
-) {
-  return const TextStyle(
-    color: Colors.black,
+  BuildContext context, {
+  Color? color,
+}) {
+  return TextStyle(
+    color: color ?? defaultColor,
     fontSize: 10.0,
     fontWeight: FontWeight.w300,
     fontFamily: 'MontserratThin',
