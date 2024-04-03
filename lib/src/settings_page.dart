@@ -27,9 +27,7 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 10,
-              ),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(color: getBackgroundColor(context)),
               child: const Column(
                 children: [
@@ -91,13 +89,8 @@ class _SettingsButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                data,
-                style: getRegularTextStyle(context),
-              ),
-              const Icon(
-                Icons.keyboard_arrow_right_outlined,
-              )
+              Text(data, style: getRegularTextStyle(context)),
+              const Icon(Icons.keyboard_arrow_right_outlined),
             ],
           ),
         ),

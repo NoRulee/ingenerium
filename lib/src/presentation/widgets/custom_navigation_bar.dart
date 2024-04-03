@@ -54,10 +54,7 @@ class _NavButton extends StatelessWidget {
         child: Column(
           children: [
             Icon(icon),
-            Text(
-              data,
-              style: textStyle,
-            ),
+            Text(data, style: textStyle),
           ],
         ),
       ),

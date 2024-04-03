@@ -71,13 +71,8 @@ class _ProgressBarWithTitle extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Посещение',
-            style: getBoldTextStyle(context),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
+          Text('Посещение', style: getBoldTextStyle(context)),
+          const SizedBox(height: 20),
           const _ProgressBar(name: 'Биотехнологии'),
           const SizedBox(height: 20.0),
           const _ProgressBar(name: 'Робототехника'),
@@ -107,13 +102,8 @@ class _ProgressBar extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              name,
-              style: getRegularTextStyle(context),
-            ),
-            const SizedBox(
-              height: 21,
-            ),
+            Text(name, style: getRegularTextStyle(context)),
+            const SizedBox(height: 21),
             Expanded(
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -150,17 +140,11 @@ class _ProgressButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              '12 Фев 2024',
-              style: getThinTextStyle(context, color: Colors.black),
-            ),
+            Text('12 Фев 2024', style: getThinTextStyle(context, color: Colors.black)),
             const SizedBox(
               height: 4,
             ),
-            Text(
-              'Н',
-              style: getRegularTextStyle(context),
-            ),
+            Text('Н', style: getRegularTextStyle(context)),
           ],
         ),
       ),
@@ -198,10 +182,7 @@ class _NameProfileAndAvatar extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Имя Фамилия',
-                style: getBoldTextStyle(context),
-              ),
+              Text('Имя Фамилия', style: getBoldTextStyle(context)),
               Container(
                 decoration: BoxDecoration(
                   color: getPrimaryColor(context),
@@ -211,10 +192,7 @@ class _NameProfileAndAvatar extends StatelessWidget {
                   padding: const EdgeInsets.all(4.0),
                   child: Text(
                     'Группа 28',
-                    style: getLightTextStyle(
-                      context,
-                      color: Colors.white,
-                    ),
+                    style: getLightTextStyle(context, color: Colors.white),
                   ),
                 ),
               )

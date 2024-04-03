@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:injenerium_mobile_app/src/presentation/profile_page.dart';
+import 'package:injenerium_mobile_app/src/presentation/schedule_page.dart';
 
 /// Main application of the site.
 class App extends StatelessWidget {
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Инженериум Мобильное Приложение',
-      home: const ProfilePage(),
+      home: const SchedulePage(),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: const ColorScheme.light(
