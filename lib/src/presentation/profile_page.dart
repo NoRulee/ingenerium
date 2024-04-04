@@ -50,9 +50,7 @@ class _Galery extends StatelessWidget {
           ),
           const Spacer(),
           InkWell(
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const GaleryPage()),
-            ),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GaleryPage())),
             child: const Icon(Icons.keyboard_arrow_right_outlined),
           ),
         ],

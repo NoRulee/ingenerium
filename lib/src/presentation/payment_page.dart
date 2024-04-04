@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:injenerium_mobile_app/src/presentation/payment_calculation_page.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/color_style.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/text_stryle.dart';
 import 'package:injenerium_mobile_app/src/presentation/widgets/custom_app_bar.dart';
@@ -145,7 +144,7 @@ class _CustomPaymentContainer extends StatelessWidget {
                   style: ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(getPrimaryColor(context)),
                   ),
-                  onPressed: () {},
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const PaymentCalcPage())),
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
