@@ -46,7 +46,7 @@ class _Galery extends StatelessWidget {
         children: [
           Text(
             'Галерея',
-            style: getBoldTextStyle(context),
+            style: getMediumTextStyle(context),
           ),
           const Spacer(),
           InkWell(
@@ -71,7 +71,7 @@ class _ProgressBarWithTitle extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Посещение', style: getBoldTextStyle(context)),
+          Text('Посещение', style: getMediumTextStyle(context)),
           const SizedBox(height: 20),
           const _ProgressBar(name: 'Биотехнологии'),
           const SizedBox(height: 20.0),
@@ -182,7 +182,7 @@ class _NameProfileAndAvatar extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Имя Фамилия', style: getBoldTextStyle(context)),
+              Text('Имя Фамилия', style: getMediumTextStyle(context)),
               Container(
                 decoration: BoxDecoration(
                   color: getPrimaryColor(context),

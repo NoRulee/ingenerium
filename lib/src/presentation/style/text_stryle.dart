@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 const Color defaultColor = Colors.black;
 
 /// Get Title Text Style with given [context].
-TextStyle getTitleTextStyle(
+TextStyle getBoldTextStyle(
   BuildContext context, {
   Color? color,
 }) {
@@ -11,12 +11,12 @@ TextStyle getTitleTextStyle(
     color: color ?? defaultColor,
     fontSize: 24.0,
     fontWeight: FontWeight.w700,
-    fontFamily: 'MontserratTitle',
+    fontFamily: 'MontserratBold',
   );
 }
 
 /// Get Bold Text Style with given [context].
-TextStyle getBoldTextStyle(
+TextStyle getMediumTextStyle(
   BuildContext context, {
   Color? color,
 }) {
@@ -24,7 +24,7 @@ TextStyle getBoldTextStyle(
     color: color ?? defaultColor,
     fontSize: 20.0,
     fontWeight: FontWeight.w500,
-    fontFamily: 'MontserratBold',
+    fontFamily: 'MontserratMedium',
   );
 }
 
