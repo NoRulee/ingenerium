@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:injenerium_mobile_app/src/presentation/payment_page.dart';
-import 'package:injenerium_mobile_app/src/presentation/profile_page.dart';
-import 'package:injenerium_mobile_app/src/presentation/schedule_page.dart';
+
 import 'package:injenerium_mobile_app/src/presentation/style/text_stryle.dart';
 
 class BottomNavBar extends StatefulWidget {
