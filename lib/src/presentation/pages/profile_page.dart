@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            CustomNavBar(),
+            // CustomNavBar(),
           ],
         ),
       ),

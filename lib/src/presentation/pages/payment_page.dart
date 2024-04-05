@@ -41,7 +41,7 @@ class PaymentPage extends StatelessWidget {
                 ),
               ),
             ),
-            CustomNavBar(),
+            // CustomNavBar(),
           ],
         ),
       ),

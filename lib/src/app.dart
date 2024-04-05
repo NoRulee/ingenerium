@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:injenerium_mobile_app/src/presentation/pages/home_page.dart';
 import 'package:injenerium_mobile_app/src/presentation/pages/profile_page.dart';
 
 /// Main application of the site.
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Инженериум Мобильное Приложение',
-      home: const ProfilePage(),
+      home: const HomePage(),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: const ColorScheme.light(
