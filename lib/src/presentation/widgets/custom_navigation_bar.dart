@@ -56,17 +56,20 @@ class CustomNavBar extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Row(
-          children: List.generate(navItems.length, (index) {
-            final e = navItems.elementAt(index);
-            return _NavButton(
-              icon: e.icon,
-              data: e.title,
-              isSelected: selectedIndex == index,
-              onTap: () {
-                onChange?.call(index);
-              },
-            );
-          }),
+          children: List.generate(
+            navItems.length,
+            (index) {
+              final e = navItems.elementAt(index);
+              return _NavButton(
+                icon: e.icon,
+                data: e.title,
+                isSelected: selectedIndex == index,
+                onTap: () {
+                  onChange?.call(index);
+                },
+              );
+            },
+          ),
         ),
       ),
     );
@@ -77,13 +80,12 @@ class _NavButton extends StatelessWidget {
   final VoidCallback onTap;
   final IconData icon;
   final String data;
-  // final TextStyle textStyle;
+
   final bool isSelected;
 
   const _NavButton({
     required this.icon,
     required this.data,
-    // required this.textStyle,
     required this.isSelected,
     required this.onTap,
   });
@@ -91,7 +93,6 @@ class _NavButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color iconColor = isSelected ? getPrimaryColor(context) : getOnBackgroundColor(context);
-    Color textColor = isSelected ? getPrimaryColor(context) : getOnBackgroundColor(context);
 
     return Expanded(
       child: InkWell(

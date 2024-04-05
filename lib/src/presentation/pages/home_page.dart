@@ -17,9 +17,9 @@ class HomePage extends StatelessWidget {
     final HomePageController controller = HomePageController();
 
     List<NavItem> _nabItems = [
-      NavItem(title: 'Paymant', icon: Icons.abc, builder: (_) => const PaymentPage()),
-      NavItem(title: 'Prifile', icon: Icons.abc, builder: (_) => const ProfilePage()),
-      NavItem(title: 'Schedule', icon: Icons.abc, builder: (_) => const SchedulePage()),
+      NavItem(title: 'Оплата', icon: Icons.list_alt_outlined, builder: (_) => const PaymentPage()),
+      NavItem(title: 'Профиль', icon: Icons.account_circle_outlined, builder: (_) => const ProfilePage()),
+      NavItem(title: 'Расписание', icon: Icons.calendar_month_outlined, builder: (_) => const SchedulePage()),
     ];
 
     return Scaffold(
@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
           builder: (context, value, child) {
             return Column(
               children: [
-                const CustomAppBar(
-                  title: 'Title',
+                CustomAppBar(
+                  title: _nabItems.elementAt(controller.value).title,
                   settings: true,
                 ),
                 Expanded(

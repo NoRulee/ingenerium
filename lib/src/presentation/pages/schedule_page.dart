@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/color_style.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/text_stryle.dart';
-import 'package:injenerium_mobile_app/src/presentation/widgets/custom_app_bar.dart';
-import 'package:injenerium_mobile_app/src/presentation/widgets/custom_navigation_bar.dart';
 
 class SchedulePage extends StatelessWidget {
   const SchedulePage({super.key});
@@ -14,7 +12,6 @@ class SchedulePage extends StatelessWidget {
       body: const SafeArea(
         child: Column(
           children: [
-            CustomAppBar(title: 'Расписание', settings: true),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
