@@ -36,7 +36,7 @@ TextStyle getRegularTextStyle(
   return TextStyle(
     color: color ?? defaultColor,
     fontSize: 16.0,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     fontFamily: 'MontserratRegular',
   );
 }

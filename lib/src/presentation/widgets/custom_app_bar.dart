@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/color_style.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/text_stryle.dart';
-import 'package:injenerium_mobile_app/src/presentation/settings_page.dart';
+import 'package:injenerium_mobile_app/src/presentation/pages/settings_page.dart';
 
 class CustomAppBar extends StatelessWidget {
   final bool arrowBack;
