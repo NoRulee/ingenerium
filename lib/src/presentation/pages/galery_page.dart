@@ -9,7 +9,9 @@ class GaleryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: getSecondaryColor(context),
-      body: const CustomAppBar(title: 'Галерея', arrowBack: true),
+      body: SafeArea(
+        child: const CustomAppBar(title: 'Галерея', arrowBack: true),
+      ),
     );
   }
 }
