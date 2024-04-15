@@ -6,7 +6,7 @@ import 'package:injenerium_mobile_app/src/presentation/widgets/custom_app_bar.da
 import 'package:injenerium_mobile_app/src/presentation/widgets/custom_navigation_bar.dart';
 
 class HomePageController extends ValueNotifier<int> {
-  HomePageController() : super(0);
+  HomePageController() : super(1);
 }
 
 class HomePage extends StatelessWidget {
