@@ -131,6 +131,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  sbp:
+    dependency: "direct main"
+    description:
+      name: sbp
+      sha256: bd3ce533a6090b44ca46da72d087d9b5e04c8ea46dfb35ac484036b8dfdd7767
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -202,3 +210,4 @@ packages:
     version: "13.0.0"
 sdks:
   dart: ">=3.3.0 <4.0.0"
+  flutter: ">=2.5.0"

@@ -36,9 +36,16 @@
 
          In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
     <queries>
+        <!-- <array>
+            <package android:name="ru.sberbankmobile" />
+            <package android:name="ru.gazprombank.android.mobilebank.app" />
+            <package android:name="ru.letobank.Prometheus" />
+            <package android:name="logo.com.mbanking" />
+            <package android:name="com.openbank" /> -->
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+       
     </queries>
 </manifest>

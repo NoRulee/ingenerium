@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/color_style.dart';
 import 'package:injenerium_mobile_app/src/presentation/style/text_stryle.dart';
 import 'package:injenerium_mobile_app/src/presentation/widgets/custom_app_bar.dart';
+import 'package:injenerium_mobile_app/src/presentation/widgets/spb.dart';
+import 'package:sbp/models/c2bmembers_model.dart';
 
 class PaymentCalcPageController extends ValueNotifier<int> {
   PaymentCalcPageController() : super(0);
@@ -14,6 +16,9 @@ class PaymentCalcPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PaymentCalcPageController calcPageController = PaymentCalcPageController();
+
+    final url = 'https://qr.nspk.ru/AS10003P3RH0LJ2A9ROO038L6NT5RU1M?type=01&bank=000000000001&sum=10000&cur=RUB&crc=F3D0';
+    List<C2bmemberModel> informations = [];
 
     return Scaffold(
       backgroundColor: getSecondaryColor(context),
@@ -104,7 +109,7 @@ class PaymentCalcPage extends StatelessWidget {
                         getPrimaryColor(context),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () => SbpModalBottomSheetWidget(informations, url),
                     child: Text(
                       'Оплатить',
                       style: getRegularTextStyle(context, color: getBackgroundColor(context)),
