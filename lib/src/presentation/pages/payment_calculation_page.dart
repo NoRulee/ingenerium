@@ -109,7 +109,15 @@ class PaymentCalcPage extends StatelessWidget {
                         getPrimaryColor(context),
                       ),
                     ),
-                    onPressed: () => SbpModalBottomSheetWidget(informations, url),
+                    onPressed: () => showModalBottomSheet(
+                      context: context,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(20),
+                        ),
+                      ),
+                      builder: (ctx) => SbpModalBottomSheetWidget(informations, url),
+                    ),
                     child: Text(
                       'Оплатить',
                       style: getRegularTextStyle(context, color: getBackgroundColor(context)),
